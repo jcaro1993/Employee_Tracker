@@ -152,6 +152,11 @@ function ViewEmployee() {
 function addEmployee() {
     inquirer
         .prompt([{
+                type: "number",
+                message: "what is employees ID ",
+                name: "id"
+            },
+            {
                 type: "input",
                 message: "what is Employee first name",
                 name: "first_name"
@@ -205,7 +210,7 @@ function updateEmployeerole() {
             ])
             .then(function(answer) {
                 console.log(answer.choice)
-                connection.query("SELECT * FROM roles", function(err, results) {
+                connection.query("SELECT * FROM role", function(err, results) {
                     if (err) throw err;
 
                     inquirer
