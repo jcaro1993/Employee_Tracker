@@ -84,15 +84,16 @@ function addDepartment() {
                 type: "input",
                 message: "what is the department name",
                 name: "department_name"
-            }
+            },
         ]).then((answer) => {
-            "INSERT INTO employee_db.department SET ?;",
-            answer,
-            (err, res) => {
-                if (err) throw err;
-                console.log("department added")
-                start()
-            }
+            console.table(answer)
+            connection.query("INSERT INTO employee_db.department SET ?;",
+                answer,
+                (err, res) => {
+                    if (err) throw err;
+                    console.log("department added")
+                    start()
+                })
         })
 }
 
@@ -134,9 +135,10 @@ function addRole() {
             {
                 type: "number",
                 message: "whats thier department ID ",
-                name: " department_id"
+                name: "department_id"
             }
         ]).then((answer) => {
+
             connection.query("INSERT INTO employee_db.role SET ?;",
                 answer,
                 (err, res) => {

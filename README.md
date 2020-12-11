@@ -2,11 +2,8 @@
 
 Developers are often tasked with creating interfaces that make it easy for non-developers to view and interact with information stored in databases. Often these interfaces are known as **C**ontent **M**anagement **S**ystems. In this homework assignment, your challenge is to architect and build a solution for managing a company's employees using node, inquirer, and MySQL.
 
-## Instructions
 
 Design the following database schema containing three tables:
-
-![Database Schema](Assets/schema.png)
 
 * **department**:
 
@@ -37,10 +34,16 @@ Build a command-line application that at a minimum allows the user to:
   * Update employee roles
 
 
-```
+
 As a business owner
 I want to be able to view and manage the departments, roles, and employees in my company
 So that I can organize and plan my business
-``
+
+
+#Images of Readme
+![Screen shot of Questions and Read.me when generated](todo.PNG);
+![Screen shot of Questions and Read.me when generated](view.PNG);
+
+
 
 
