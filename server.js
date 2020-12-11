@@ -30,7 +30,7 @@ async function start() {
         .prompt({
             type: 'list',
             message: "what would you like to do ?",
-            choices: ["add department", "add role", "add employee", "view departments", "view roles", "view employee", "Update employee roles"],
+            choices: ["add department", "add role", "add employee", "view departments", "view role", "view employee", "Update employee roles"],
             name: "choices"
         });
     switch (results.choices) {
@@ -98,12 +98,20 @@ function addDepartment() {
 
 // role function
 
-function viewRole() {
-    connection.query("SELECT * FROM roles;", (err, res) => {
-        if (err) throw err;
-        console.table(res)
-        start()
-    })
+// function viewRole() {
+//     connection.query("SELECT * FROM role;", (err, res) => {
+//         if (err) throw err;
+//         console.table(res)
+//         start()
+//     })
+// }
+
+function  viewRole() {          
+    connection.query("SELECT role.id, role.title, department.department_name AS department, role.salary FROM role LEFT JOIN department on role.department_id = department.id;",  function(err,  res)  {
+        if (err) throw  err;            
+        console.table(res);           
+        start()          
+    });
 }
 
 function addRole() {
@@ -238,13 +246,3 @@ function updateEmployeerole() {
             })
     });
 }
-
-
-
-
-
-
-// runs node
-// inquired with questions
-// if they answer
-// run function for that answer
