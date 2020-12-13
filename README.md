@@ -40,6 +40,8 @@ I want to be able to view and manage the departments, roles, and employees in my
 So that I can organize and plan my business
 
 
+![Video](video.gif);
+
 #Images of Readme
 ![Screen shot of Questions and Read.me when generated](todo.PNG);
 ![Screen shot of Questions and Read.me when generated](view.PNG);
